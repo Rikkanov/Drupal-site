@@ -1,0 +1,13 @@
+name: Simple Percentage Field
+type: module
+description: 'Provides a simple percentage field type.'
+package: 'Field types'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - drupal:field
+
+# Information added by Drupal.org packaging script on 2022-07-22
+version: '1.0.3'
+project: 'simple_percentage_field'
+datestamp: 1658498571

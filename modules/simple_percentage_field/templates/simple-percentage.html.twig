@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Simple Percentage field.
+ *
+ * Available variables:
+ * - value: A percentage value of entered digit in the context of min and max
+ *   values entered in the field settings.
+ * - absolute_value: An actual (absolute) value entered to the field.
+ * - numeric_position: Position of the numeric value. Can ahve 3 variants:
+ *   - 0: Numeric value is hidden. Only progress bar is displayed.
+ *   - 1: Numeric value displayed on the left side of the progress bar.
+ *   - 2: Numeric value is displayed on the right side of teh progress bar.
+ * - numeric_prefix: Prefix for the numeric value (and also for min and max
+ *   values).
+ * - numeric_suffix: Suffix for the numeric value (and also for min and max
+ *   values).
+ * - show_min: Boolean option that shows or hides minimum limit value for the
+ *   field.
+ * - show_max: Boolean option that shows or hides maximum limit value for the
+ *   field.
+ * - min_value: The minimum limit value for the field.
+ * - max_value: The maximum limit value for the field.
+ *
+ * @see template_preprocess_simple_percentage()
+ *
+ * @ingroup themeable
+ */
+#}
+{% macro numeric_value(prefix, value, suffix, align = "") %}
+  {% apply spaceless %}
+    <span class="numeric-value-wrapper {{ align }}">
+      {% if prefix %}
+        <span class="prefix">{{ prefix }}</span>
+      {% endif %}
+      <span class="numeric-value">{{ value }}</span>
+      {% if suffix %}
+        <span class="suffix">{{ suffix }}</span>
+      {% endif %}
+    </span>
+  {% endapply %}
+{% endmacro %}
+
+<div class="simple-percentage-wrapper clearfix">
+  {% if numeric_position == 1 %}
+    {{ _self.numeric_value(numeric_prefix, absolute_value, numeric_suffix, "left") }}
+  {% endif %}
+
+  <div class="stripe-wrapper">
+    <div class="simple-percentage">
+      <div class="filled" style="width: {{- value ~ '%' -}};"></div>
+    </div>
+    {% if show_min or show_max %}
+      <div class="limit-values-label">
+        {% if show_min %}
+          <div class="min-value">
+            {{ _self.numeric_value(numeric_prefix, min_value, numeric_suffix) }}
+          </div>
+        {% endif %}
+        {% if show_max %}
+          <div class="max-value">
+            {{ _self.numeric_value(numeric_prefix, max_value, numeric_suffix) }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if numeric_position == 2 %}
+    {{ _self.numeric_value(numeric_prefix, absolute_value, numeric_suffix, "right") }}
+  {% endif %}
+</div>

@@ -1,0 +1,17 @@
+name: Preview Site
+description: 'Provides preview site functionality'
+core_version_requirement: ^8.8 || ~9.0
+type: module
+dependencies:
+  - dynamic_entity_reference:dynamic_entity_reference
+  - drupal:file
+  - drupal:datetime
+  - tome:tome_static
+  - entity_usage:entity_usage
+test_dependencies:
+  - s3client:s3client
+
+# Information added by Drupal.org packaging script on 2021-09-20
+version: '1.1.2'
+project: 'preview_site'
+datestamp: 1632097785

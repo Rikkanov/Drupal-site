@@ -1,0 +1,4 @@
+default:
+  css:
+    theme:
+      css/style.css: {}

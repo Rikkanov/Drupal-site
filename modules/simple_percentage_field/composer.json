@@ -1,0 +1,19 @@
+{
+  "name": "drupal/simple_percentage_field",
+  "type": "drupal-module",
+  "description": "Provides a field type for displaying percentage values or \"from-to\" values in a progress bar style.",
+  "keywords": [
+    "Drupal",
+    "Content",
+    "Field"
+  ],
+  "homepage": "https://www.drupal.org/project/simple_percentage_field",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name" : "Roman Sych (rsych)",
+      "homepage" : "https://www.drupal.org/u/rsych",
+      "role" : "Maintainer"
+    }
+  ]
+}

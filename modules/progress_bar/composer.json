@@ -1,0 +1,23 @@
+{
+  "name": "drupal/progress_bar",
+  "description": "Modules provide Progress bar field formatter for List field and State field of commerce.",
+  "keywords": [],
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/progress_bar",
+  "names": [
+      "drupal/progress_bar"
+  ],
+  "licenses": [
+      {
+          "name": "GNU General Public License v2.0 or later",
+          "osi": "GPL-2.0-or-later",
+          "url": "https://spdx.org/licenses/GPL-2.0-or-later.html#licenseText"
+      }
+  ],
+  "support": {
+      "source": "https://git.drupalcode.org/project/progress_bar"
+  },
+  "requires": {
+      "drupal/core": "~8.0"
+  }
+}

@@ -1,0 +1,35 @@
+# See docs at https://www.drupal.org/drupalorg/docs/drupal-ci/customizing-drupalci-testing-for-projects
+build:
+  assessment:
+    validate_codebase:
+      phplint:
+      container_composer:
+      container_command:
+        commands:
+          - "cd ${SOURCE_DIR} && sudo -u www-data composer require drupal/devel:4.x-dev"
+      host_command:
+        commands:
+          # Apply patch from https://www.drupal.org/project/drupalci_testbot/issues/3251817
+          - "cd ${SOURCE_DIR} && sudo -u www-data curl https://www.drupal.org/files/issues/2021-11-30/3251817-4.run-tests-with-multiple-groups.patch | sudo -u www-data patch -p1 --verbose"
+      csslint:
+      eslint:
+      phpcs:
+      # Static analysis for uses of @deprecated code.
+      phpstan:
+        halt-on-fail: false
+    testing:
+      run_tests.functional:
+        types: 'PHPUnit-Functional'
+        testgroups: '--all'
+        # The groups are 'scheduler,scheduler_api,scheduler_rules_integration'
+        suppress-deprecations: true
+      run_tests.kernel:
+        types: 'PHPUnit-Kernel'
+        testgroups: 'scheduler_kernel'
+        suppress-deprecations: true
+      run_tests.js:
+        types: 'PHPUnit-FunctionalJavascript'
+        testgroups: 'scheduler_js'
+        suppress-deprecations: true
+        concurrency: 1
+        halt-on-fail: false

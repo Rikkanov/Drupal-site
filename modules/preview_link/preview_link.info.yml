@@ -1,0 +1,16 @@
+name: Preview Link
+type: module
+description: Allows anyone to preview unpublished content with a unique link.
+core_version_requirement: ^8.7.7 || ^9
+php: 7.3
+package: Preview
+dependencies:
+  - dynamic_entity_reference:dynamic_entity_reference
+test_dependencies:
+  - paragraphs:paragraphs
+  - entity_reference_revisions:entity_reference_revisions
+
+# Information added by Drupal.org packaging script on 2022-01-07
+version: '2.0.0-alpha1'
+project: 'preview_link'
+datestamp: 1641523052

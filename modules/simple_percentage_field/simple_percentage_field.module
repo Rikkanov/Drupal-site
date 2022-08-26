@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Simple Percentage Field module.
+ */
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function simple_percentage_field_field_formatter_info_alter(&$info) {
+  $info['string']['field_types'][] = 'simple_percentage';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function simple_percentage_field_theme($existing, $type, $theme, $path) {
+  return [
+    'simple_percentage' => [
+      'variables' => [
+        'value' => NULL,
+        'absolute_value' => NULL,
+        'numeric_position' => NULL,
+        'numeric_prefix' => NULL,
+        'numeric_suffix' => NULL,
+        'show_min' => NULL,
+        'show_max' => NULL,
+        'min_value' => NULL,
+        'max_value' => NULL,
+      ],
+    ],
+  ];
+}

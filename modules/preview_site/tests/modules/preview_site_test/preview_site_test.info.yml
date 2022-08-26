@@ -1,0 +1,12 @@
+name: Preview site test
+description: 'Provides test plugins for preview site'
+core_version_requirement: ^8.8 || ~9.0
+type: module
+dependencies:
+  - preview_site:preview_site
+  - block_content:block_content
+
+# Information added by Drupal.org packaging script on 2021-09-20
+version: '1.1.2'
+project: 'preview_site'
+datestamp: 1632097785

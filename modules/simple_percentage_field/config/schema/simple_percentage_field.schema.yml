@@ -1,0 +1,38 @@
+field.formatter.settings.simple_percentage_default_formatter:
+  type: mapping
+  label: 'Percentage field formatter settings'
+  mapping:
+    numeric_percentage_position:
+      type: bit
+      label: 'Option to show/hide numeric value of the field'
+    numeric_prefix:
+      type: label
+      label: 'Prefix for numeric value of the field'
+    numeric_suffix:
+      type: label
+      label: 'Suffix for numeric value of the field'
+    show_min:
+      type: boolean
+      label: 'Show or hide min value'
+    show_max:
+      type: boolean
+      label: 'Show or hide max value'
+
+field.field_settings.simple_percentage:
+  type: mapping
+  label: 'Percentage field settings'
+  mapping:
+    min_value:
+      type: integer
+      label: 'Minimum value'
+    max_value:
+      type: integer
+      label: 'Maximum value'
+
+field.value.simple_percentage:
+  type: mapping
+  label: 'Default value'
+  mapping:
+    value:
+      type: tinyint
+      label: 'Value'

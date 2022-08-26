@@ -1,0 +1,13 @@
+name: Media thumbnail URL formatter
+description: Provides a field formatter for media reference field
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - media
+
+# Information added by Drupal.org packaging script on 2021-12-14
+version: '2.0.1'
+project: 'media_thumbnail_url_formatter'
+datestamp: 1639483835
